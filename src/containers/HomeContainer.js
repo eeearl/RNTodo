@@ -2,15 +2,23 @@ import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import ScheduleButtonSet from '../components/ScheduleButtonSet';
 import CarouselEvent from '../components/CarouselEvent';
+import ChannelHorizontal from '../components/ChannelHorizontal';
 
-const IntroContainer = () => {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.welcome}>Intro</Text>
-      <ScheduleButtonSet style={styles.scheduleButtonSet} />
-      <CarouselEvent></CarouselEvent>
-    </View>
-  )
+class HomeContainer extends React.Component {
+  
+  static navigationOptions = {
+    title: 'Home'
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <ScheduleButtonSet style={styles.scheduleButtonSet} />
+        <ChannelHorizontal></ChannelHorizontal>
+        <CarouselEvent></CarouselEvent>
+      </View>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
@@ -28,4 +36,4 @@ const styles = StyleSheet.create({
     flex: 1
   },
 });
-export default IntroContainer;
+export default HomeContainer;

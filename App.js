@@ -11,8 +11,8 @@ import React, {Component} from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 import AppStackCreator from './src/navigator/AppStackCreator';
 import AppTabCreator from './src/navigator/AppTabCreator';
-import IntroContainer from './src/containers/IntroContainer';
-import SnsContainer from './src/containers/SnsContainer';
+import HomeContainer from './src/containers/HomeContainer';
+import StoryContainer from './src/containers/StoryContainer';
 import SettingContainer from './src/containers/SettingContainer';
 
 import { createAppContainer } from 'react-navigation';
@@ -24,15 +24,27 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-const IntroStack = AppStackCreator({ 
-    Intro: IntroContainer
+const HomeStack = AppStackCreator({ 
+    Home: HomeContainer
   }, {
-    initialRouteName: "Intro"
+    initialRouteName: "Home",
+    defaultNavigationOptions: {
+      headerTintColor: '#333'
+    }
+});
+
+const StoryStack = AppStackCreator({ 
+    Story: StoryContainer
+  }, {
+    initialRouteName: "Story",
+    defaultNavigationOptions: {
+      headerTintColor: '#333'
+    }
 });
 
 const AppTab = AppTabCreator({
-  Intro: IntroStack,
-  Sns: SnsContainer,
+  Home: HomeStack,
+  Story: StoryStack,
   Setting: SettingContainer
 });
 

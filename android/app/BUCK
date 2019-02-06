@@ -40,7 +40,7 @@ android_build_config(
 
 android_resource(
     name = "res",
-    package = "com.ohentv",
+    package = "com.vibes",
     res = "src/main/res",
 )
 

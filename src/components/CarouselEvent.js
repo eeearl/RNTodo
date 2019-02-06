@@ -12,7 +12,7 @@ const ENTRIES2 = [
     },
     {
         title: 'Favourites landscapes 2',
-        subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur',
+        subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur sdfksjdfkjsfksjdfnkjefjbffq qofiqwfoijqwfoijq ',
         illustration: 'https://i.imgur.com/5tj6S7Ol.jpg'
     },
     {
@@ -58,8 +58,7 @@ const Entry = ({image, title, subtitle}) => {
       </View>
       <View style={[styles.textContainer]}>
         <Text>{uppercaseTitle}</Text>
-        <Text style={[styles.subtitle]}
-          numberOfLines={2}>
+        <Text style={[styles.subtitle]} numberOfLines={2} ellipsizeMode='tail'>
           {subtitle}
         </Text>
       </View>
@@ -78,13 +77,13 @@ class CarouselEvent extends React.Component {
   render() {
     return(
       <View style={styles.carouselWrapper}>
-        <Text style={styles.title}>{`Example`}</Text>
+        <Text style={styles.title}>{`Event`}</Text>
         <Carousel
           data={ENTRIES2}
           renderItem={this._renderItem}
           sliderWidth={sliderWidth}
           itemWidth={itemWidth}
-          inactiveSlideScale={0.95}
+          inactiveSlideScale={1}
           inactiveSlideOpacity={1}
           enableMomentum={true}
           activeSlideAlignment={'start'}
@@ -115,7 +114,14 @@ const styles = StyleSheet.create({
 //         borderRadius: 8
   },
   title: {
-
+    alignSelf: 'stretch',
+    paddingHorizontal: 8,
+    paddingVertical: 10,
+    fontWeight: 'bold'
+  },
+  subtitle: {
+    minHeight: 100,
+    maxHeight: 100
   },
   entryContainer: {
     width: itemWidth,

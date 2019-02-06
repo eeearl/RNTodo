@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "ohentv-tvOS.app"
-               BlueprintName = "ohentv-tvOS"
-               ReferencedContainer = "container:ohentv.xcodeproj">
+               BuildableName = "Vibes-tvOS.app"
+               BlueprintName = "Vibes-tvOS"
+               ReferencedContainer = "container:Vibes.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "ohentv-tvOSTests.xctest"
-               BlueprintName = "ohentv-tvOSTests"
-               ReferencedContainer = "container:ohentv.xcodeproj">
+               BuildableName = "Vibes-tvOSTests.xctest"
+               BlueprintName = "Vibes-tvOSTests"
+               ReferencedContainer = "container:Vibes.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -61,9 +61,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "ohentv-tvOSTests.xctest"
-               BlueprintName = "ohentv-tvOSTests"
-               ReferencedContainer = "container:ohentv.xcodeproj">
+               BuildableName = "Vibes-tvOSTests.xctest"
+               BlueprintName = "Vibes-tvOSTests"
+               ReferencedContainer = "container:Vibes.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "ohentv-tvOS.app"
-            BlueprintName = "ohentv-tvOS"
-            ReferencedContainer = "container:ohentv.xcodeproj">
+            BuildableName = "Vibes-tvOS.app"
+            BlueprintName = "Vibes-tvOS"
+            ReferencedContainer = "container:Vibes.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "ohentv-tvOS.app"
-            BlueprintName = "ohentv-tvOS"
-            ReferencedContainer = "container:ohentv.xcodeproj">
+            BuildableName = "Vibes-tvOS.app"
+            BlueprintName = "Vibes-tvOS"
+            ReferencedContainer = "container:Vibes.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -113,9 +113,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "ohentv-tvOS.app"
-            BlueprintName = "ohentv-tvOS"
-            ReferencedContainer = "container:ohentv.xcodeproj">
+            BuildableName = "Vibes-tvOS.app"
+            BlueprintName = "Vibes-tvOS"
+            ReferencedContainer = "container:Vibes.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
