@@ -8,32 +8,38 @@ const ENTRIES2 = [
     {
         title: 'Favourites landscapes 1',
         subtitle: 'Lorem ipsum dolor sit amet',
-        illustration: 'https://i.imgur.com/SsJmZ9jl.jpg'
+        imgUrl: 'https://i.imgur.com/SsJmZ9jl.jpg',
+        eventDatetime: '2019-02-07T15:53:00'
     },
     {
         title: 'Favourites landscapes 2',
         subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur sdfksjdfkjsfksjdfnkjefjbffq qofiqwfoijqwfoijq ',
-        illustration: 'https://i.imgur.com/5tj6S7Ol.jpg'
+        imgUrl: 'https://i.imgur.com/5tj6S7Ol.jpg',
+        eventDatetime: '2019-02-07T15:53:00'
     },
     {
         title: 'Favourites landscapes 3',
         subtitle: 'Lorem ipsum dolor sit amet et nuncat',
-        illustration: 'https://i.imgur.com/pmSqIFZl.jpg'
+        imgUrl: 'https://i.imgur.com/pmSqIFZl.jpg',   
+        eventDatetime: '2019-02-07T15:53:00'
     },
     {
         title: 'Favourites landscapes 4',
         subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur',
-        illustration: 'https://i.imgur.com/cA8zoGel.jpg'
+        imgUrl: 'https://i.imgur.com/cA8zoGel.jpg',   
+        eventDatetime: '2019-02-07T15:53:00'
     },
     {
         title: 'Favourites landscapes 5',
         subtitle: 'Lorem ipsum dolor sit amet',
-        illustration: 'https://i.imgur.com/pewusMzl.jpg'
+        imgUrl: 'https://i.imgur.com/pewusMzl.jpg',
+        eventDatetime: '2019-02-07T15:53:00'
     },
     {
         title: 'Favourites landscapes 6',
         subtitle: 'Lorem ipsum dolor sit amet et nuncat',
-        illustration: 'https://i.imgur.com/l49aYS3l.jpg'
+        imgUrl: 'https://i.imgur.com/l49aYS3l.jpg',
+        eventDatetime: '2019-02-07T15:53:00'
     }
 ];
 
@@ -47,11 +53,11 @@ const sliderWidth = Dimensions.get('window').width;
 const itemWidth = wp(75) + (wp(2) * 2);
 const itemHeight = Dimensions.get('window').height * 0.36;
 
-const Entry = ({image, title, subtitle}) => {
+const Entry = ({image, title, subtitle, onPress}) => {
   const uppercaseTitle = title.toUpperCase();
 
   return (
-    <TouchableOpacity style={styles.entryContainer}>
+    <TouchableOpacity style={styles.entryContainer} onPress={onPress}>
       <View style={styles.shadow} />
       <View style={[styles.imageContainer]}>
         <Image source={{ uri: image }} style={styles.image} />
@@ -67,10 +73,19 @@ const Entry = ({image, title, subtitle}) => {
 }
 
 class CarouselEvent extends React.Component {
-  
+
+  constructor(props) {
+    super(props)
+
+    this._renderItem = this._renderItem.bind(this);
+  }
   _renderItem({item, index}) {
     return (
-      <Entry image={item.illustration} title={item.title} subtitle={item.subtitle} />
+      <Entry 
+        image={item.imgUrl} 
+        title={item.title} 
+        subtitle={item.subtitle} 
+        onPress={ () => this.props.onPress(item) } />
     ) 
   }
 

@@ -8,25 +8,22 @@
  */
 
 import React, {Component} from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, Animated, Easing, } from 'react-native';
 import AppStackCreator from './src/navigator/AppStackCreator';
 import AppTabCreator from './src/navigator/AppTabCreator';
 import HomeContainer from './src/containers/HomeContainer';
+import EventPageContainer from './src/containers/EventPageContainer';
 import StoryContainer from './src/containers/StoryContainer';
 import SettingContainer from './src/containers/SettingContainer';
 
 import { createAppContainer } from 'react-navigation';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
 
 const HomeStack = AppStackCreator({ 
-    Home: HomeContainer
-  }, {
+    Home: HomeContainer,
+    EventPage: EventPageContainer
+  }, 
+  {
     initialRouteName: "Home",
     defaultNavigationOptions: {
       headerTintColor: '#333'
@@ -39,13 +36,22 @@ const StoryStack = AppStackCreator({
     initialRouteName: "Story",
     defaultNavigationOptions: {
       headerTintColor: '#333'
+    },
+});
+
+const SettingStack = AppStackCreator({
+  Setting: SettingContainer
+  }, {
+    initialRouteName: "Setting",
+    defaultNavigationOptions: {
+      headerTintColor: '#333'
     }
 });
 
 const AppTab = AppTabCreator({
   Home: HomeStack,
   Story: StoryStack,
-  Setting: SettingContainer
+  Setting: SettingStack
 });
 
 const AppContainer = createAppContainer(AppTab)

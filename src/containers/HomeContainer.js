@@ -10,12 +10,16 @@ class HomeContainer extends React.Component {
     title: 'Home'
   }
 
+  _onPressEventPageItem = (eventObj) => {
+    this.props.navigation.navigate('EventPage', eventObj);
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <ScheduleButtonSet style={styles.scheduleButtonSet} />
         <ChannelHorizontal></ChannelHorizontal>
-        <CarouselEvent></CarouselEvent>
+        <CarouselEvent onPress={this._onPressEventPageItem}></CarouselEvent>
       </View>
     )
   }

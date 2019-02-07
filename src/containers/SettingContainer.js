@@ -1,12 +1,18 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-const IntroContainer = () => {
-  return (
-        <View style={styles.container}>
+class SettingContainer extends React.Component {
+  static navigationOptions = {
+    title: 'Setting'
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
         <Text style={styles.welcome}>Setting</Text>
-        </View>
-  )
+      </View>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
@@ -27,4 +33,5 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
-export default IntroContainer;
+
+export default SettingContainer;
