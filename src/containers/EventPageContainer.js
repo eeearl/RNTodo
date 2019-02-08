@@ -2,12 +2,13 @@ import React from 'react';
 import { View, Text, Image, Dimensions, StyleSheet, ScrollView } from 'react-native';
 import { Header } from 'react-navigation';
 import SqaureDateDisplay from '../components/SqaureDateDisplay';
+import EventTitleDisplay from '../components/EventTitleDisplay';
+import IconButton from '../components/IconButton';
 
 class EventPageContainer extends React.Component {
 
   static navigationOptions = ({ navigation }) => {
     return ({
-      // title: navigation.getParam('title', 'Event'),
       headerTransparent: true,
       header: (props) => (
         <View style={{position: 'relative', height: 200}}>
@@ -28,17 +29,17 @@ class EventPageContainer extends React.Component {
 
     return (
       <ScrollView>
-      
         <View style={{flexDirection: 'row'}}>
           <SqaureDateDisplay width={100} datetimeStr={eventDate} />
-          <View style={{ flexGrow: 1, justifyContent: 'center'}}>
-            <Text style={styles.title} numberOfLines={1} ellipsizeMode='tail'>{title}</Text>
-            <Text style={styles.subtitle} numberOfLines={1} ellipsizeMode='tail'>{subtitle}</Text>
-          </View>
+          <EventTitleDisplay title={title} subtitle={subtitle} />
         </View>
         
-        
-        
+        <View style={{flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 20}}>
+          <IconButton text='aaa'/>
+          <IconButton text='bbb'/>
+          <IconButton text='ccc'/>
+        </View>
+
         <View style={{flexDirection: 'row'}}>
           <Text style={{flex: 1, alignItems: 'center'}}>icon</Text>
           <View style={{ flexGrow: 1, justifyContent: 'center'}}>
@@ -46,12 +47,8 @@ class EventPageContainer extends React.Component {
             <Text style={styles.subtitle} numberOfLines={1} ellipsizeMode='tail'>{subtitle}</Text>
           </View>
         </View>
-
-        <View>
-          
-        </View>
-
       </ScrollView>
+
     )
   }
 }
@@ -61,13 +58,6 @@ const styles =  StyleSheet.create({
     width: Dimensions.get('window').width,
     height: 200
   },
-  title: {
-    fontSize: 22,
-    fontWeight: 'bold'
-  },
-  subtitle: {
-    color: 'darkgray'
-  }
 });
 
 export default EventPageContainer;
