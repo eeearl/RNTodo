@@ -1,18 +1,28 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, ScrollView } from 'react-native';
+import UserCell from '../components/setting/UserCell';
+import GeneralCell from '../components/setting/GeneralCell';
+import SectionSeperateCell from '../components/setting/SectionSeperateCell';
 
-class SettingContainer extends React.Component {
-  static navigationOptions = {
-    title: 'Setting'
-  }
-
-  render() {
-    return (
+const SettingContainer = (props) => {
+  return (
+    <ScrollView>
       <View style={styles.container}>
-        <Text style={styles.welcome}>Setting</Text>
+        <UserCell></UserCell>
+        <GeneralCell title='EDIT PROFILE'/>
+        <GeneralCell title='MY POSTS' tailText='10'/>
+        <GeneralCell title='LINK ACCOUNT' tailText='Facebook'/>
+        <SectionSeperateCell />
+        <GeneralCell title='APP SETTING' onPress={(e) => props.navigation.navigate('AppSetting', e) }/>
+        <GeneralCell title='NOTICE' onPress={(e) => props.navigation.navigate('Notice') }/>
+        <GeneralCell title='ABOUT' onPress={(e) => props.navigation.navigate('About') }/>
       </View>
-    )
-  }
+    </ScrollView>
+  )
+}
+
+SettingContainer.navigationOptions = {
+  title: 'Setting'
 }
 
 const styles = StyleSheet.create({

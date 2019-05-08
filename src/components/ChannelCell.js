@@ -1,24 +1,13 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import RoundedImage from './RoundedImage'
 
 const ChannelCell = () => {
   return (
-    <View style={styles.cellWrapper}>
-      <TouchableOpacity
-        style={{
-          borderWidth:1,
-          borderColor:'rgba(0,0,0,0.2)',
-          alignItems:'center',
-          justifyContent:'center',
-          width:50,
-          height:50,
-          backgroundColor:'#333',
-          borderRadius:100,
-          marginBottom: 10 
-        }}>
-        </TouchableOpacity>
+    <TouchableOpacity style={styles.cellWrapper}>
+      <RoundedImage />
       <Text>ChannelName</Text>
-    </View>
+    </TouchableOpacity>
   );
 }
 

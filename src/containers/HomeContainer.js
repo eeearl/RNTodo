@@ -4,25 +4,23 @@ import ScheduleButtonSet from '../components/ScheduleButtonSet';
 import CarouselEvent from '../components/CarouselEvent';
 import ChannelHorizontal from '../components/ChannelHorizontal';
 
-class HomeContainer extends React.Component {
+const HomeContainer = (props) => {
   
-  static navigationOptions = {
-    title: 'Home'
+  const _onPressEventPageItem = (eventObj) => {
+    props.navigation.navigate('EventPage', eventObj);
   }
 
-  _onPressEventPageItem = (eventObj) => {
-    this.props.navigation.navigate('EventPage', eventObj);
-  }
+  return (
+    <View style={styles.container}>
+      <ScheduleButtonSet style={styles.scheduleButtonSet} />
+      <ChannelHorizontal></ChannelHorizontal>
+      <CarouselEvent onPress={_onPressEventPageItem}></CarouselEvent>
+    </View>
+  )
+}
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <ScheduleButtonSet style={styles.scheduleButtonSet} />
-        <ChannelHorizontal></ChannelHorizontal>
-        <CarouselEvent onPress={this._onPressEventPageItem}></CarouselEvent>
-      </View>
-    )
-  }
+HomeContainer.navigationOptions = {
+  title: 'Home'
 }
 
 const styles = StyleSheet.create({

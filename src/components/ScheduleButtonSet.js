@@ -1,5 +1,6 @@
 import React from 'react';
-import { TouchableOpacity, View, Text, StyleSheet, Dimensions } from 'react-native';
+import { TouchableOpacity, View, Text, StyleSheet, Dimensions, Image } from 'react-native';
+import { todayButtonBg, tmrwBtnBg, thisweek } from '../images/_assets/';
 
 class ScheduleButtonSet extends React.Component {
   
@@ -14,12 +15,18 @@ class ScheduleButtonSet extends React.Component {
         this.setState({ width: event.nativeEvent.layout.width });
       }}>
         <TouchableOpacity style={[styles.today, buttonBoxStyle]}>
-            <Text style={styles.text}>Today</Text> 
+          <Image style={{ position: 'absolute', top: 0, right:0, left: 0, bottom: 0 } } source={{ uri:todayButtonBg }} />
+          <View style={{ backgroundColor: '#00000088', position: 'absolute', top: 0, right: 0, left: 0, bottom: 0 }} />
+          <Text style={styles.text}>Today</Text> 
         </TouchableOpacity>
         <TouchableOpacity style={[styles.tomorrow, buttonBoxStyle]}>
+          <Image style={{ position: 'absolute', top: 0, right:0, left: 0, bottom: 0 } } source={{ uri:tmrwBtnBg }} />
+          <View style={{ backgroundColor: '#00000088', position: 'absolute', top: 0, right: 0, left: 0, bottom: 0 }} />
           <Text style={styles.text}>Tomorrow</Text> 
         </TouchableOpacity>
         <TouchableOpacity style={[styles.thisweek, buttonBoxStyle]}>
+          <Image style={{ position: 'absolute', top: 0, right:0, left: 0, bottom: 0 } } source={{ uri:thisweek }} />
+          <View style={{ backgroundColor: '#00000088', position: 'absolute', top: 0, right: 0, left: 0, bottom: 0 }} />
           <Text style={styles.text}>This Week</Text> 
         </TouchableOpacity>
       </View>

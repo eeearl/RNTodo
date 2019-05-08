@@ -1,5 +1,12 @@
+// @flow 
+
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Image, Text, Dimensions, Platform } from 'react-native';
+import type {
+  ViewStyleProp,
+  TextStyleProp,
+  ImageStyleProp,
+} from 'react-native/Libraries/StyleSheet/StyleSheet';
 import Carousel from 'react-native-snap-carousel';
 
 const IS_IOS = Platform.OS === 'ios';
@@ -53,6 +60,10 @@ const sliderWidth = Dimensions.get('window').width;
 const itemWidth = wp(75) + (wp(2) * 2);
 const itemHeight = Dimensions.get('window').height * 0.36;
 
+type Props = {
+    style?: ViewStyleProp;
+};
+
 const Entry = ({image, title, subtitle, onPress}) => {
   const uppercaseTitle = title.toUpperCase();
 
@@ -72,47 +83,40 @@ const Entry = ({image, title, subtitle, onPress}) => {
   )
 }
 
-class CarouselEvent extends React.Component {
+const CarouselEvent = (props) => {
 
-  constructor(props) {
-    super(props)
-
-    this._renderItem = this._renderItem.bind(this);
-  }
-  _renderItem({item, index}) {
+  function _renderItem({item, index}) {
     return (
       <Entry 
         image={item.imgUrl} 
         title={item.title} 
         subtitle={item.subtitle} 
-        onPress={ () => this.props.onPress(item) } />
+        onPress={ () => props.onPress(item) } />
     ) 
   }
 
-  render() {
-    return(
-      <View style={styles.carouselWrapper}>
-        <Text style={styles.title}>{`Event`}</Text>
-        <Carousel
-          data={ENTRIES2}
-          renderItem={this._renderItem}
-          sliderWidth={sliderWidth}
-          itemWidth={itemWidth}
-          inactiveSlideScale={1}
-          inactiveSlideOpacity={1}
-          enableMomentum={true}
-          activeSlideAlignment={'start'}
-          containerCustomStyle={styles.slider}
-          contentContainerCustomStyle={styles.sliderContentContainer}
-          activeAnimationType={'spring'}
-          activeAnimationOptions={{
-              friction: 4,
-              tension: 40
-          }}
-        />
-      </View> 
-    )
-  }
+  return(
+    <View style={styles.carouselWrapper}>
+      <Text style={styles.title}>{`Event`}</Text>
+      <Carousel
+        data={ENTRIES2}
+        renderItem={_renderItem}
+        sliderWidth={sliderWidth}
+        itemWidth={itemWidth}
+        inactiveSlideScale={1}
+        inactiveSlideOpacity={1}
+        enableMomentum={true}
+        activeSlideAlignment={'start'}
+        containerCustomStyle={styles.slider}
+        contentContainerCustomStyle={styles.sliderContentContainer}
+        activeAnimationType={'spring'}
+        activeAnimationOptions={{
+            friction: 4,
+            tension: 40
+        }}
+      />
+    </View> 
+  )
 }
 
 const styles = StyleSheet.create({
