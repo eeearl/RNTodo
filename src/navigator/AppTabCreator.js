@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from 'react-navigation';
 
-export default TabNavigator = (tabStructure) => {
-  return createBottomTabNavigator(tabStructure);
+export default TabNavigator = (tabStructure, bottomNavConfigs = {}) => {
+  return createBottomTabNavigator(tabStructure, bottomNavConfigs);
 }

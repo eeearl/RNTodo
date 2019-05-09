@@ -1,12 +1,14 @@
+// @flow 
+
 import React from 'react';
 import { View } from 'react-native';
 
-const NoticeContainer = () => {
+const ArtistChannelContainer = () => {
   return (
     <View>
-    
+      
     </View>
   )
 }
 
-export default NoticeContainer;
+export default ArtistChannelContainer;

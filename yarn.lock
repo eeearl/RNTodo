@@ -4770,7 +4770,16 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-native-gesture-handler@^1.0.15, react-native-gesture-handler@~1.0.14:
+react-native-gesture-handler@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.2.1.tgz#9c48fb1ab13d29cece24bbb77b1e847eebf27a2b"
+  integrity sha512-c1+L72Vjc/bwHKcIJ8a2/88SW9l3/axcAIpg3zB1qTzwdCxHZJeQn6d58cQXHPepxFBbgfTCo60B7SipSfo+zw==
+  dependencies:
+    hoist-non-react-statics "^2.3.1"
+    invariant "^2.2.2"
+    prop-types "^15.5.10"
+
+react-native-gesture-handler@~1.0.14:
   version "1.0.15"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.0.15.tgz#7e0d0a457820a3c9325a3d492daaed14400508a6"
   integrity sha512-BePn+YOKcspHb1xPkUdJs+H6jiaECrT2c98txADBYWHwuUeundE+uUJG0r3FQLFvM2MoGeiJeD96sePzk+WSvQ==
@@ -4815,10 +4824,10 @@ react-native-video@^4.4.1:
     prop-types "^15.5.10"
     shaka-player "^2.4.4"
 
-react-native@^0.59.5:
-  version "0.59.5"
-  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.59.5.tgz#79500d2885a3dc83216715e1fc6effa878ad6ea9"
-  integrity sha512-8Q/9cS6IMsGNiFhJgzmncbUeuacXQMe5EJl0c63fW30DvjEjeTVCvhM08eGzSpsNlOvL2XDRa4YOiCrwI7S1TA==
+react-native@0.59.8:
+  version "0.59.8"
+  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.59.8.tgz#ade4141c777c60f5ec4889d9811d0f80a9d56547"
+  integrity sha512-x1T+/pEXrjgdH9uDzd5doJy5aFlBqW04j7ljDKIGALchhnvdFbtXXrUZ/1PfWHMrIdZxtaDt4tkSttp662GSQA==
   dependencies:
     "@babel/runtime" "^7.0.0"
     "@react-native-community/cli" "^1.2.1"
@@ -4942,15 +4951,15 @@ react-transform-hmr@^1.0.4:
     global "^4.3.0"
     react-proxy "^1.1.7"
 
-react@^16.8.6:
-  version "16.8.6"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.8.6.tgz#ad6c3a9614fd3a4e9ef51117f54d888da01f2bbe"
-  integrity sha512-pC0uMkhLaHm11ZSJULfOBqV4tIZkx87ZLvbbQYunNixAAvjnC+snJCg0XQXn9VIsttVsbZP/H/ewzgsd5fxKXw==
+react@16.8.3:
+  version "16.8.3"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.8.3.tgz#c6f988a2ce895375de216edcfaedd6b9a76451d9"
+  integrity sha512-3UoSIsEq8yTJuSu0luO1QQWYbgGEILm+eJl2QN/VLDi7hL+EN18M3q3oVZwmVzzBJ3DkM7RMdRwBmZZ+b4IzSA==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
-    scheduler "^0.13.6"
+    scheduler "^0.13.3"
 
 read-pkg-up@^2.0.0:
   version "2.0.0"
@@ -5295,7 +5304,7 @@ scheduler@^0.11.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
 
-scheduler@^0.13.6:
+scheduler@^0.13.3, scheduler@^0.13.6:
   version "0.13.6"
   resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.13.6.tgz#466a4ec332467b31a91b9bf74e5347072e4cd889"
   integrity sha512-IWnObHt413ucAYKsD9J1QShUKkbKLQQHdxRyw73sw4FN26iWr3DY/H34xGPe4nmL1DwXyWmSWmMrA9TfQbE/XQ==
@@ -5378,9 +5387,9 @@ setprototypeof@1.1.0:
   integrity sha512-BvE/TwpZX4FXExxOxZyRGQQv651MSwmWKZGqvmPcRIjDqWub67kTKuIMx43cZZrS/cBBzwBcNDWoFxt2XEFIpQ==
 
 shaka-player@^2.4.4:
-  version "2.4.7"
-  resolved "https://registry.yarnpkg.com/shaka-player/-/shaka-player-2.4.7.tgz#8532e53ba7d8781b0785b552c7c68681c13c3206"
-  integrity sha512-KXYVB7snrrmcmDvusf2IIGOXZCvrlb6vXkl1q0pXP/QdUkvHm2SsW6jIXKvDz9xsvs9Pt/R7tm8POgfUOzybcQ==
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/shaka-player/-/shaka-player-2.5.0.tgz#e479366120c248597f0697d5e4458ebe9f75846d"
+  integrity sha512-MaJ1BbMBiSDpfhctMHG+C/GYspH2D037gcGBAKGrQBWdVc/7loJ50flbvmOhZm2LJsFV8sSg/JjAlH7gei3Ozg==
 
 shebang-command@^1.2.0:
   version "1.2.0"

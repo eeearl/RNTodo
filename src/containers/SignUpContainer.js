@@ -7,7 +7,6 @@ import Analystics from '../libs/Analystics'
 
 const SignUpContainer = (props) => {
 
-
   function _onPressButton() {
     Analystics.selectContent('1', 'nat', 'image');
   }

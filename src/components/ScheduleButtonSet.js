@@ -1,37 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TouchableOpacity, View, Text, StyleSheet, Dimensions, Image } from 'react-native';
+import { NavigationActions } from 'react-navigation';
+
 import { todayButtonBg, tmrwBtnBg, thisweek } from '../images/_assets/';
 
-class ScheduleButtonSet extends React.Component {
+const ScheduleButtonSet = (props) => {
   
-  state = { width: 0 }
+  console.log(props);
+  
+  const [width, setWidth] = useState(0); 
+  
+  const itemWidth = width / 3 - 10;
+  const buttonBoxStyle = { width: itemWidth, height: itemWidth };
 
-  render() {
-    const itemWidth = this.state.width / 3 - 10;
-    const buttonBoxStyle = { width: itemWidth, height: itemWidth };
+  const navigateAction = NavigationActions.navigate({
+    routeName: 'NewPost',
+  
+    params: {},
+    action: NavigationActions.navigate({ routeName: 'SubProfileRoute' }),
+  });
 
-    return (
-      <View style={styles.wrapper} onLayout={event => {
-        this.setState({ width: event.nativeEvent.layout.width });
-      }}>
-        <TouchableOpacity style={[styles.today, buttonBoxStyle]}>
-          <Image style={{ position: 'absolute', top: 0, right:0, left: 0, bottom: 0 } } source={{ uri:todayButtonBg }} />
-          <View style={{ backgroundColor: '#00000088', position: 'absolute', top: 0, right: 0, left: 0, bottom: 0 }} />
-          <Text style={styles.text}>Today</Text> 
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.tomorrow, buttonBoxStyle]}>
-          <Image style={{ position: 'absolute', top: 0, right:0, left: 0, bottom: 0 } } source={{ uri:tmrwBtnBg }} />
-          <View style={{ backgroundColor: '#00000088', position: 'absolute', top: 0, right: 0, left: 0, bottom: 0 }} />
-          <Text style={styles.text}>Tomorrow</Text> 
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.thisweek, buttonBoxStyle]}>
-          <Image style={{ position: 'absolute', top: 0, right:0, left: 0, bottom: 0 } } source={{ uri:thisweek }} />
-          <View style={{ backgroundColor: '#00000088', position: 'absolute', top: 0, right: 0, left: 0, bottom: 0 }} />
-          <Text style={styles.text}>This Week</Text> 
-        </TouchableOpacity>
-      </View>
-    );
-  }
+  return (
+    <View style={styles.wrapper} onLayout={event => {
+      setWidth(event.nativeEvent.layout.width);
+    }}>
+      <TouchableOpacity style={[styles.today, buttonBoxStyle]} onPress={() => { props.navigation.dispatch(navigateAction) }}>
+        <Image style={{ position: 'absolute', top: 0, right:0, left: 0, bottom: 0 } } source={{ uri:todayButtonBg }} />
+        <View style={{ backgroundColor: '#00000088', position: 'absolute', top: 0, right: 0, left: 0, bottom: 0 }} />
+        <Text style={styles.text}>Today</Text> 
+      </TouchableOpacity>
+      <TouchableOpacity style={[styles.tomorrow, buttonBoxStyle]}>
+        <Image style={{ position: 'absolute', top: 0, right:0, left: 0, bottom: 0 } } source={{ uri:tmrwBtnBg }} />
+        <View style={{ backgroundColor: '#00000088', position: 'absolute', top: 0, right: 0, left: 0, bottom: 0 }} />
+        <Text style={styles.text}>Tomorrow</Text> 
+      </TouchableOpacity>
+      <TouchableOpacity style={[styles.thisweek, buttonBoxStyle]}>
+        <Image style={{ position: 'absolute', top: 0, right:0, left: 0, bottom: 0 } } source={{ uri:thisweek }} />
+        <View style={{ backgroundColor: '#00000088', position: 'absolute', top: 0, right: 0, left: 0, bottom: 0 }} />
+        <Text style={styles.text}>This Week</Text> 
+      </TouchableOpacity>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({

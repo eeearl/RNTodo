@@ -12,7 +12,7 @@ const HomeContainer = (props) => {
 
   return (
     <View style={styles.container}>
-      <ScheduleButtonSet style={styles.scheduleButtonSet} />
+      <ScheduleButtonSet style={styles.scheduleButtonSet} navigation={props.navigation} />
       <ChannelHorizontal></ChannelHorizontal>
       <CarouselEvent onPress={_onPressEventPageItem}></CarouselEvent>
     </View>
@@ -38,4 +38,5 @@ const styles = StyleSheet.create({
     flex: 1
   },
 });
+
 export default HomeContainer;
