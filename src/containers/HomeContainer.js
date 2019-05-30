@@ -1,8 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import ScheduleButtonSet from '../components/ScheduleButtonSet';
-import CarouselEvent from '../components/CarouselEvent';
-import ChannelHorizontal from '../components/ChannelHorizontal';
+import MainListComponent from '../components/MainListComponent';
 
 const HomeContainer = (props) => {
   
@@ -12,9 +10,11 @@ const HomeContainer = (props) => {
 
   return (
     <View style={styles.container}>
-      <ScheduleButtonSet style={styles.scheduleButtonSet} navigation={props.navigation} />
+      {/* <ScheduleButtonSet style={styles.scheduleButtonSet} navigation={props.navigation} />
       <ChannelHorizontal></ChannelHorizontal>
-      <CarouselEvent onPress={_onPressEventPageItem}></CarouselEvent>
+      <CarouselEvent onPress={_onPressEventPageItem}></CarouselEvent> */}
+
+      <MainListComponent {...props} style={styles.mainList}/>
     </View>
   )
 }
@@ -28,6 +28,10 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+  },
+  mainList: {
+    flex: 1,
+    width: '100%'
   },
   welcome: {
     fontSize: 20,
